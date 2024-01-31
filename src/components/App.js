@@ -10,10 +10,13 @@ console.log(user);
 function App() {
   return (
     <div>
-      <NavBar />
-      <Home />
-      <About />
-    </div>
+    <NavBar />
+    {/* Pass down user data to the Home component */}
+    <Home user={user} />
+
+    {/* Pass down bio, github, and linkedin links to the About component */}
+    <About bio={user.bio} github={user.links.github} linkedin={user.links.linkedin} />
+  </div>
   );
 }
 
